@@ -1,0 +1,136 @@
+:root {
+    --text-color: #ccc;
+    --element-color-1: #dbf5f0;
+    --element-color-2: #a4e5e0;
+    --element-color-3: #37beb0;
+    --element-color-4: #0c6170;
+    --corner-radius-1: 16px;
+}
+
+body{
+    font-family: 'Roboto Mono', monospace;
+    background: var(--element-color-1);
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-weight:bold;
+    color:  var(--element-color-4);
+}
+
+p {
+    color:var(--element-color-4);
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+.left-align{
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.right-align{
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.left-text-align{
+    text-align: left;
+}
+
+.right-text-align{
+    text-align: right;
+}
+
+.drop-shadow {
+    filter:drop-shadow(0.0em 0.0em 1rem var(--element-color-4))
+}
+
+.navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--element-color-4);
+    font-size: 12;
+}
+
+.row{
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+
+.col{
+    flex-basis: 50%;
+}
+
+.large-button{
+    width: 180px;
+    color: var(--element-color-4);
+    padding: 12px 0;
+    background: var(--element-color-2);
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.large-button:hover {
+    background: var(--element-color-3);
+}
+
+.portfolio-entry {
+    display: flex;
+
+    height: 32rem;
+    border-radius: var(--corner-radius-1);
+    overflow: hidden;
+    vertical-align: middle;
+    margin-bottom: 2rem;
+}
+
+.portfolio-entry-textbox {
+    width: 40%;
+    height: 100%;
+}
+
+.portfolio-entry-text{
+    color:  var(--element-color-4);
+    margin-left: var(--corner-radius-1);
+    margin-right: var(--corner-radius-1);
+}
+
+.portfolio-entry-image{
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-container {
+    background-color: gray;
+    padding: 16px;
+    object-fit: cover;
+    display: block;
+}
+

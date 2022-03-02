@@ -1,12 +1,68 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio Lasse Foster</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style/styles.css">
+
 </head>
+
 <body>
-    <h1>SuperNinja</h1>
-    <p>Hello World</p>
+    <div class="container">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">REGION</a></li>
+                    <li><a href="">ABOUT</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h1>Lasse Foster</h1>
+                <p>
+                    Hello world
+                </p>
+                <button class="large-button" type="button">Explore</button>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-entry">
+        <div class="portfolio-entry-textbox">
+            <div class="portfolio-entry-text">
+                <h1>WHITE ROOM - VR ESCAPE ROOM</h1>
+                <h2><i>VR, Tool and Gamedev</i></h2>
+                White Room is a room scale (4m x 4m) VR game for one player with an approximated playtime of 30 minutes.
+                It was made using the Unity game engine and features mutliple different riddle mechanics centered around the direct physical interaction of the user with the environment.
+            </div>
+        </div>
+            <img style="object-position: 0px -450px;" class="portfolio-entry-image" src="images/WhiteRoom_Poster.jpg" alt="WhiteRoom_Poster">
+    </div>
+
+    <div class="portfolio-entry">
+        <img style="object-position: 0px -450px;" class="portfolio-entry-image left-align" src="images/WhiteRoom_Poster.jpg" alt="WhiteRoom_Poster">
+        <div class="portfolio-entry-textbox right-align">
+            <div class="portfolio-entry-text right-text-align">
+                <h1>WHITE ROOM - VR ESCAPE ROOM</h1>
+                <h2><i>VR, Tool and Gamedev</i></h2>
+                White Room is a room scale (4m x 4m) VR game for one player with an approximated playtime of 30 minutes.
+                It was made using the Unity game engine and features mutliple different riddle mechanics centered around the direct physical interaction of the user with the environment.
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
