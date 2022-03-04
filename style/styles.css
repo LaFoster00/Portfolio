@@ -13,6 +13,8 @@
 
 body{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/BG.jpg');
+    background-attachment: fixed;
+    background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
     height: 100vh;
