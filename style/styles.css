@@ -8,13 +8,12 @@
     --bg-color-accent : #333;
     --link-color : #008c96;
     --nav-bg-color : #333;
+    --website-max-width: 72rem;
     --border-radius : 1rem;
 }
 
 body{
-    height: 100vh;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 16px;
+    font-family: 'RobotoMono', monospace;
     color: var(--color-text);
 }
 
@@ -49,7 +48,6 @@ a {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "RobotoMono", sans-serif;
   font-weight: 700;
   line-height: 1;
   color: var(--color-heading);
@@ -60,13 +58,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .highlight {
-  font-family: "RobotoMono", sans-serif;
   color: var(--color-primary);
 }
 
 /* Body text */
 p {
-  font-family: "RobotoMono", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: var(--heading-color);
@@ -82,64 +78,24 @@ em {
   font-style: italic;
 }
 
-/* Blockquote */
-blockquote {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  color: var(--color-text);
-  border-left: 5px solid #008c96;
-  margin: 0;
-  padding: 10px 20px;
-}
-
-
-.project {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  margin-bottom: 20px;
-}
-
-.project img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.project-details {
-  padding: 20px;
-  background-color: var(--bg-color-primary);
-  border-radius: 5px;
-  margin-top: -50px;
-  z-index: 1;
-}
-
-.project-title {
-  font-family: "Inter", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  margin: 0;
-}
-
 nav {
-  height: 60px;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 1rem;
   /* Fallback for non border image support*/
   border: 0.2rem solid var(--color-primary);
 
   background: linear-gradient(var(--nav-bg-color), var(--nav-bg-color)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
-  border-radius: 1rem;
-  border: 4px solid transparent;
+  border-radius: var(--border-radius);
+  border: 0.3rem solid transparent;
 }
 
 /* Override border-radius for the navbar itself */
 nav {
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
 }
 
 nav ul {
@@ -150,13 +106,13 @@ nav ul {
 }
 
 nav li {
-  margin: 0 10px;
+  margin: 0 0.6rem;
 }
 
 nav a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.2rem;
 }
 
 .active a {
@@ -174,7 +130,7 @@ nav a {
 /* Style for mobile navigation bar links */
 .mobile-nav a {
   display: block;
-  padding: 10px;
+  padding: 1rem;
   text-align: center;
   background-color: var(--nav-bg-color);
   color: var(--color-text);
@@ -199,14 +155,14 @@ nav a {
 
 /* Style navigation menu links */
 .mobile-nav a {
-  color: white;
-  padding: 14px 16px;
+  color: var(--color-heading);
+  padding: 1rem 1rem;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1.2rem;
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   /* Show mobile navigation bar for small devices */
   .mobile-nav {
     display: block;
@@ -229,34 +185,34 @@ nav a {
 }
 
 .logo-links img {
-  height: 30px;
+  height: 2rem;
   aspect-ratio: 1;
 }
 
 .content-container {
-  max-width: 48rem;
+  max-width: var(--website-max-width);
   margin: 0 auto;
-  padding: 20px;
+  padding: 1rem;
 }
 
 .section-container {
   background: var(--bg-color-accent);
   background-image: linear-gradient(to right, var(--bg-color-accent), var(--bg-color-primary));
   margin: 1rem 0rem;
-  padding: 20px;
+  padding: 1rem;
   /* Fallback for non border image support*/
   border: 0.2rem solid var(--color-primary);
 
   background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
-  border-radius: 1rem;
-  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  border: 0.2rem solid transparent;
 }
 
 .panel-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1rem;
+  gap: 1em;
 }
 
 .panel {
@@ -268,8 +224,8 @@ nav a {
 
   background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
-  border-radius: 1rem;
-  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  border: 0.2rem solid transparent;
   overflow: hidden;
   
 }
