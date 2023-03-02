@@ -1,29 +1,35 @@
 :root {
-    --color : #fff;
-    --color-primary : #EDEDED;
+    --color-text : #EDEDED;
+    --color-primary : #1deeaf;
     --color-secondary : #c30098;
     --color-heading : #EDEDED;
-    --bg-color-primary : #171717;
-    --bg-color-accent : #444444;
+    --bg-color: #171717;
+    --bg-color-primary : #242424;
+    --bg-color-accent : #333;
     --link-color : #008c96;
     --nav-bg-color : #333;
+    --border-radius : 1rem;
 }
 
 body{
     height: 100vh;
     font-family: 'Roboto Mono', monospace;
     font-size: 16px;
-    color: var(--color-primary);
+    color: var(--color-text);
 }
 
 /* Primary color */
 .color-primary {
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 /* Secondary color */
 .color-secondary {
   color: var(--color-secondary);
+}
+
+.bg-color {
+  background-color: var(--bg-color);
 }
 
 /* Background color */
@@ -43,15 +49,24 @@ a {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Inter", sans-serif;
+  font-family: "RobotoMono", sans-serif;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1;
   color: var(--color-heading);
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+  font-family: "RobotoMono", sans-serif;
+  color: var(--color-primary);
 }
 
 /* Body text */
 p {
-  font-family: "Inter", sans-serif;
+  font-family: "RobotoMono", sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: var(--heading-color);
@@ -72,7 +87,7 @@ blockquote {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--color-primary);
+  color: var(--color-text);
   border-left: 5px solid #008c96;
   margin: 0;
   padding: 10px 20px;
@@ -108,12 +123,23 @@ blockquote {
 }
 
 nav {
-  background-color: var(--nav-bg-color);
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  /* Fallback for non border image support*/
+  border: 0.2rem solid var(--color-primary);
+
+  background: linear-gradient(var(--nav-bg-color), var(--nav-bg-color)) padding-box,
+              linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
+  border-radius: 1rem;
+  border: 4px solid transparent;
+}
+
+/* Override border-radius for the navbar itself */
+nav {
+  border-radius: 1rem;
 }
 
 nav ul {
@@ -128,7 +154,7 @@ nav li {
 }
 
 nav a {
-  color: var(--color-primary);
+  color: var(--color-text);
   text-decoration: none;
   font-size: 18px;
 }
@@ -140,7 +166,7 @@ nav a {
 /* Style for mobile navigation bar */
 .mobile-nav {
     overflow: hidden;
-    background-color: #333;
+    background-color: var(--nav-bg-color);
     position: relative;
     display: none; /* Hide by default */
 }
@@ -151,12 +177,15 @@ nav a {
   padding: 10px;
   text-align: center;
   background-color: var(--nav-bg-color);
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 /* Style the hamburger menu */
 .mobile-nav a.icon {
-  background: black;
+  background: var(--color-primary);
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  background-size: 100%;
+  
   display: block;
   position: absolute;
   right: 0;
@@ -205,7 +234,77 @@ nav a {
 }
 
 .content-container {
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-container {
+  background: var(--bg-color-accent);
+  background-image: linear-gradient(to right, var(--bg-color-accent), var(--bg-color-primary));
+  margin: 1rem 0rem;
+  padding: 20px;
+  /* Fallback for non border image support*/
+  border: 0.2rem solid var(--color-primary);
+
+  background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
+              linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+}
+
+.panel-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Fallback for non border image support*/
+  border: 0.2rem solid var(--color-primary);
+
+  background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
+              linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  overflow: hidden;
+  
+}
+
+.panel a:link {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.panel a:visited {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.panel a:hover {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.panel a:active {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.panel img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.panel h2
+{
+  margin: 1rem;
+}
+
+.panel p {
+  margin: 1rem;
 }
