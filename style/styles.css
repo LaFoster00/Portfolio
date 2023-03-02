@@ -8,13 +8,14 @@
     --bg-color-accent : #333;
     --link-color : #008c96;
     --nav-bg-color : #333;
-    --website-max-width: 72rem;
+    --website-max-width: 72em;
     --border-radius : 1rem;
 }
 
 body{
-    font-family: 'RobotoMono', monospace;
-    color: var(--color-text);
+  font-family: 'RobotoMono', monospace;
+  font-size: 16px;
+  color: var(--color-text);
 }
 
 /* Primary color */
@@ -79,18 +80,18 @@ em {
 }
 
 nav {
-  height: 4rem;
+  height: 4em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1em;
   /* Fallback for non border image support*/
-  border: 0.2rem solid var(--color-primary);
+  border: 0.2em solid var(--color-primary);
 
   background: linear-gradient(var(--nav-bg-color), var(--nav-bg-color)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
   border-radius: var(--border-radius);
-  border: 0.3rem solid transparent;
+  border: 0.3em solid transparent;
 }
 
 /* Override border-radius for the navbar itself */
@@ -106,13 +107,13 @@ nav ul {
 }
 
 nav li {
-  margin: 0 0.6rem;
+  margin: 0 0.6em;
 }
 
 nav a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 
 .active a {
@@ -130,7 +131,7 @@ nav a {
 /* Style for mobile navigation bar links */
 .mobile-nav a {
   display: block;
-  padding: 1rem;
+  padding: 1em;
   text-align: center;
   background-color: var(--nav-bg-color);
   color: var(--color-text);
@@ -156,9 +157,9 @@ nav a {
 /* Style navigation menu links */
 .mobile-nav a {
   color: var(--color-heading);
-  padding: 1rem 1rem;
+  padding: 1em 1em;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   display: block;
 }
 
@@ -181,37 +182,37 @@ nav a {
 }
 
 .logo-links a {
-    margin: 0 0.5rem;
+    margin: 0 0.5em;
 }
 
 .logo-links img {
-  height: 2rem;
+  height: 2em;
   aspect-ratio: 1;
 }
 
 .content-container {
   max-width: var(--website-max-width);
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1em;
 }
 
 .section-container {
   background: var(--bg-color-accent);
   background-image: linear-gradient(to right, var(--bg-color-accent), var(--bg-color-primary));
-  margin: 1rem 0rem;
-  padding: 1rem;
+  margin: 1em 0em;
+  padding: 1em;
   /* Fallback for non border image support*/
-  border: 0.2rem solid var(--color-primary);
+  border: 0.2em solid var(--color-primary);
 
   background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
   border-radius: var(--border-radius);
-  border: 0.2rem solid transparent;
+  border: 0.2em solid transparent;
 }
 
 .panel-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
   gap: 1em;
 }
 
@@ -220,12 +221,12 @@ nav a {
   flex-direction: column;
   justify-content: space-between;
   /* Fallback for non border image support*/
-  border: 0.2rem solid var(--color-primary);
+  border: 0.2em solid var(--color-primary);
 
   background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
   border-radius: var(--border-radius);
-  border: 0.2rem solid transparent;
+  border: 0.2em solid transparent;
   overflow: hidden;
   
 }
@@ -258,9 +259,9 @@ nav a {
 
 .panel h2
 {
-  margin: 1rem;
+  margin: 1em;
 }
 
 .panel p {
-  margin: 1rem;
+  margin: 1em;
 }
