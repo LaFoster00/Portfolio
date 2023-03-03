@@ -1,3 +1,12 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
 :root {
     --color-text : #EDEDED;
     --color-primary : #1deeaf;
@@ -201,8 +210,6 @@ nav a {
   background-image: linear-gradient(to right, var(--bg-color-accent), var(--bg-color-primary));
   margin: 1em 0em;
   padding: 1em;
-  /* Fallback for non border image support*/
-  border: 0.2em solid var(--color-primary);
 
   background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
@@ -220,8 +227,6 @@ nav a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* Fallback for non border image support*/
-  border: 0.2em solid var(--color-primary);
 
   background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
@@ -264,4 +269,70 @@ nav a {
 
 .panel p {
   margin: 1em;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-class {
+  width: 100%;
+  max-width: 32rem;
+}
+
+.form-control
+{
+  font-family: RobotoMono;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.input-group
+{
+  width: 100%;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  padding: 0.5rem;
+  background: linear-gradient(to left, var(--color-text), var(--color-text)) padding-box,
+              linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
+  border-radius: var(--border-radius);
+  border: 0.2em solid transparent;
+  
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+  border-radius: 0.5rem;
+}
+
+input[type=email], select, textarea{
+  padding: 0.5rem;
+  background: linear-gradient(to left, var(--color-text), var(--color-text)) padding-box,
+              linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
+  border-radius: var(--border-radius);
+  border: 0.2em solid transparent;
+
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+  border-radius: 0.5rem;
+}
+
+input[type=submit] {
+  background-image: linear-gradient(to right, var(--color-primary), 25%, var(--color-secondary));
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
 }
