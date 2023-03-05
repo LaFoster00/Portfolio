@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="style/styles.css" />
@@ -20,14 +21,14 @@
     <div class="content-container">
         <div class="navigation">
             <!-- Desktop Navigation -->
-            <nav class="desktop-nav">
+            <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active"><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="nav-link main-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link active" href="projects.html">Projects</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
-                <div class="logo-links">
+                <div class="nav-link logo-links">
                     <a href="https://www.linkedin.com/in/lasse-foster-4188271a1">
                         <img src="logos/linkedin_in_128.png" alt="linkedin_logo">
                     </a>
@@ -35,32 +36,77 @@
                         <img src="logos/github_light_120.png" alt="github_logo">
                     </a>
                 </div>
-            </nav>
-            <!-- Mobile Navigation -->
-            <div class="mobile-nav">
-                <a href="index.html">Home</a>
-                <!-- Navigation links (hidden by default) -->
-                <div id="mobile-links">
-                    <a href="projects.html" class="active">Projects</a>
-                    <a href="contact.html">Contact</a>
-
-                    <div class="logo-links">
-                        <a href="https://www.linkedin.com/in/lasse-foster-4188271a1">
-                            <img src="logos/linkedin_in_128.png" alt="linkedin_logo">
-                        </a>
-                        <a href="https://github.com/LaFoster00">
-                            <img src="logos/github_light_120.png" alt="github_logo">
-                        </a>
-                    </div>
-                </div>
 
                 <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                <a href="javascript:void(0);" class="icon" onclick="mobileNavExpand()">
+                <a id="hamburger-menu" href="javascript:void(0);" class="hamburger-nav-icon"
+                    onclick="mobileNavExpand()">
                     <i class="fa fa-bars"></i>
                 </a>
+            </nav>
+        </div>
+
+        <div id="GPU_WFC" class="section-container no-padding project-container">
+            <div class="slideshow">
+                <div class="slide">
+                    <img src="projects/gpu_wfc/canvas.png" alt="gpu-wfc-cover" class="slide-image">
+                </div>
+                <div class="slide">
+                    <img src="projects/gpu_wfc/RegularConstraints_128_128.png" alt="gpu-wfc-regconstr"
+                        class="slide-image auto-scaling">
+                </div>
+                <div class="slide">
+                    <img src="images/BG.jpg" alt="gpu-wfc-regconstr" class="slide-image">
+                </div>
+            </div>
+            <div class="project-text">
+                <h2>GPU Accelerated WFC</h2>
+                <h3>Bachelor Thesis</h3>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna
+                aliqua. Non enim praesent elementum facilisis leo vel fringilla. Nunc consequat interdum varius sit amet
+                mattis
+                vulputate enim. Aenean et tortor at risus viverra adipiscing at in. Mattis pellentesque id nibh tortor
+                id aliquet lectus
+                proin nibh. Consectetur adipiscing elit duis tristique. Pellentesque elit eget gravida cum. Augue eget
+                arcu dictum
+                varius. Scelerisque purus semper eget duis. Ut porttitor leo a diam sollicitudin tempor id eu. Mi sit
+                amet mauris
+                commodo. Pellentesque massa placerat duis ultricies. Sed turpis tincidunt id aliquet risus feugiat.
+                Lacinia quis vel
+                eros donec ac odio. Et tortor consequat id porta nibh venenatis cras sed. Integer malesuada nunc vel
+                risus.
+
+                Commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet purus gravida quis blandit
+                turpis cursus. Id
+                ornare arcu odio ut sem nulla pharetra diam sit. Tincidunt augue interdum velit euismod in pellentesque
+                massa. Fermentum
+                odio eu feugiat pretium. Vel orci porta non pulvinar. Sapien eget mi proin sed libero enim sed faucibus
+                turpis. Amet
+                venenatis urna cursus eget nunc scelerisque viverra mauris. Libero nunc consequat interdum varius sit.
+                Nullam vehicula
+                ipsum a arcu. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Risus at
+                ultrices mi tempus
+                imperdiet nulla malesuada pellentesque elit. Cras sed felis eget velit aliquet sagittis. Arcu ac tortor
+                dignissim
+                convallis. Iaculis at erat pellentesque adipiscing commodo elit at. Lectus urna duis convallis convallis
+                tellus id. Eu
+                turpis egestas pretium aenean pharetra magna ac placerat vestibulum.
+            </div>
+        </div>
+
+        <div id="SLIPPER" class="section-container no-padding project-container">
+            <div class="slideshow">
+                <div class="slide">
+                    <img src="projects/gpu_wfc/canvas.png" alt="gpu-wfc-cover" class="slide-image">
+                </div>
+                <div class="slide">
+                    <img src="projects/gpu_wfc/RegularConstraints_128_128.png" alt="gpu-wfc-regconstr"
+                        class="slide-image auto-scaling">
+                </div>
             </div>
         </div>
     </div>
+    <script src="scripts/slideshow.js"></script>
 </body>
 
 </html>

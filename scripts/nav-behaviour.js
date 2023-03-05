@@ -1,9 +1,17 @@
+
+
+
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function mobileNavExpand() {
-  var x = document.getElementById("mobile-links");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
+  let links = document.querySelectorAll(".nav-link");
+  links.forEach(function(link, index) {
+    if (link.classList.contains("main-link"))
+      return;
+
+    if (link.style.display === "block") {
+      link.style.display = "";
+    } else {
+      link.style.display = "block";
+    }
+  });
 } 

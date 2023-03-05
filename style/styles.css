@@ -9,6 +9,7 @@ html {
 
 :root {
     --color-text : #EDEDED;
+    --color-text-active : #71ebc6;
     --color-primary : #1deeaf;
     --color-secondary : #c30098;
     --color-heading : #EDEDED;
@@ -103,11 +104,6 @@ nav {
   border: 0.3em solid transparent;
 }
 
-/* Override border-radius for the navbar itself */
-nav {
-  border-radius: var(--border-radius);
-}
-
 nav ul {
   list-style: none;
   margin: 0;
@@ -119,69 +115,32 @@ nav li {
   margin: 0 0.6em;
 }
 
-nav a {
+nav .nav-link {
   color: var(--color-text);
   text-decoration: none;
   font-size: 1.2em;
 }
 
-.active a {
-  font-weight: bold;
-}
-
-/* Style for mobile navigation bar */
-.mobile-nav {
-    overflow: hidden;
-    background-color: var(--nav-bg-color);
-    position: relative;
-    display: none; /* Hide by default */
-}
-
-/* Style for mobile navigation bar links */
-.mobile-nav a {
-  display: block;
-  padding: 1em;
-  text-align: center;
-  background-color: var(--nav-bg-color);
-  color: var(--color-text);
+nav .active {
+  color: var(--color-text-active);
 }
 
 /* Style the hamburger menu */
-.mobile-nav a.icon {
-  background: var(--color-primary);
-  background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-  background-size: 100%;
-  
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-/* Hide the links inside the navigation menu (except for logo/home) */
-.mobile-nav #mobile-links {
+.hamburger-nav-icon {
   display: none;
-}
 
-/* Style navigation menu links */
-.mobile-nav a {
   color: var(--color-heading);
   padding: 1em 1em;
   text-decoration: none;
   font-size: 1.2em;
-  display: block;
-}
 
-@media (max-width: 48rem) {
-  /* Show mobile navigation bar for small devices */
-  .mobile-nav {
-    display: block;
-  }
+  background: var(--color-primary);
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  background-size: 100%;
   
-  /* Hide original navigation bar for small devices */
-    .desktop-nav {
-    display: none;
-  }
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .logo-links {
@@ -191,12 +150,53 @@ nav a {
 }
 
 .logo-links a {
-    margin: 0 0.5em;
+    margin: 0 0.2em;
+    text-decoration: none;
 }
 
 .logo-links img {
   height: 2em;
   aspect-ratio: 1;
+  margin-top: 0.2em;
+}
+
+@media screen and (max-width: 48rem) {
+  nav {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--nav-bg-color);
+    position: relative;
+    display: block;
+  }
+
+  nav ul {
+    display: block;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav .nav-link {
+    display: none;
+    padding: 1em 1em;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: var(--nav-bg-color);
+  }
+
+  nav .main-link {
+    display: block;
+  }
+
+  .hamburger-nav-icon {
+    display: block;
+  }
+
+  .logo-links img {
+    margin-top: 0;
+  }
 }
 
 .content-container {
@@ -206,20 +206,21 @@ nav a {
 }
 
 .section-container {
-  background: var(--bg-color-accent);
-  background-image: linear-gradient(to right, var(--bg-color-accent), var(--bg-color-primary));
+  background: var(--bg-color-primary);
   margin: 1em 0em;
   padding: 1em;
 
-  background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
+  background: linear-gradient(to right, var(--bg-color-primary), var(--bg-color-primary)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
   border-radius: var(--border-radius);
   border: 0.2em solid transparent;
+
+  overflow: hidden;
 }
 
 .panel-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: 1em;
 }
 
@@ -228,12 +229,19 @@ nav a {
   flex-direction: column;
   justify-content: space-between;
 
-  background: linear-gradient(to left, var(--bg-color-primary), var(--bg-color-accent)) padding-box,
+  background: linear-gradient(to right, var(--bg-color-primary), var(--bg-color-primary)) padding-box,
               linear-gradient(to right, var(--color-primary), var(--color-secondary)) border-box;
   border-radius: var(--border-radius);
   border: 0.2em solid transparent;
   overflow: hidden;
   
+  height: 36rem;
+}
+
+.panel a{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
 }
 
 .panel a:link {
@@ -256,10 +264,14 @@ nav a {
   color: var(--color-text);
 }
 
-.panel img {
+.panel-img {
   width: 100%;
-  height: 50%;
+  height: 100%;
   object-fit: cover;
+}
+
+.panel-img {
+  overflow: hidden;
 }
 
 .panel h2
@@ -293,11 +305,6 @@ nav a {
 {
   font-family: RobotoMono;
   font-size: 0.8rem;
-  width: 100%;
-}
-
-.input-group
-{
   width: 100%;
 }
 
@@ -335,4 +342,109 @@ input[type=submit] {
   border: none;
   cursor: pointer;
   border-radius: 0.5rem;
+}
+
+
+.slideshow {
+  background-color: black;
+  width: 100%;
+  min-height: 32rem;
+  position: relative;
+  box-shadow: 0 0 2em black;
+}
+
+.slide{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: green;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.slide-image {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  color: var(--bg-color-accent);
+  opacity: 0.5;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+.indicator-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--bg-color-accent);
+  list-style-type: none;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.indicator {
+  padding: 0 0.1rem;
+  user-select: none;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.slideshow-active {
+  opacity: 1;
+}
+
+.no-padding {
+  padding: 0 0;
+}
+
+.project-text {
+  margin: 1em 1em;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 60rem) {
+  .project-container{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.active a {
+  font-weight: bold;
+}
+
+.auto-scaling {
+  width: auto;
+  height: auto;
 }

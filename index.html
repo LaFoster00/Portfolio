@@ -20,14 +20,14 @@
     <div class="content-container">
         <div class="navigation">
             <!-- Desktop Navigation -->
-            <nav class="desktop-nav">
+            <nav>
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="nav-link main-link active" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
-                <div class="logo-links">
+                <div class="nav-link logo-links">
                     <a href="https://www.linkedin.com/in/lasse-foster-4188271a1">
                         <img src="logos/linkedin_in_128.png" alt="linkedin_logo">
                     </a>
@@ -35,30 +35,13 @@
                         <img src="logos/github_light_120.png" alt="github_logo">
                     </a>
                 </div>
-            </nav>
-            <!-- Mobile Navigation -->
-            <div class="mobile-nav">
-                <a href="index.html" class="active">Home</a>
-                <!-- Navigation links (hidden by default) -->
-                <div id="mobile-links">
-                    <a href="projects.html">Projects</a>
-                    <a href="contact.html">Contact</a>
-
-                    <div class="logo-links">
-                        <a href="https://www.linkedin.com/in/lasse-foster-4188271a1">
-                            <img src="logos/linkedin_in_128.png" alt="linkedin_logo">
-                        </a>
-                        <a href="https://github.com/LaFoster00">
-                            <img src="logos/github_light_120.png" alt="github_logo">
-                        </a>
-                    </div>
-                </div>
 
                 <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                <a href="javascript:void(0);" class="icon" onclick="mobileNavExpand()">
+                <a id="hamburger-menu" href="javascript:void(0);" class="hamburger-nav-icon"
+                    onclick="mobileNavExpand()">
                     <i class="fa fa-bars"></i>
                 </a>
-            </div>
+            </nav>
         </div>
 
         <div class="section-container">
@@ -80,8 +63,23 @@
 
         <div class="panel-container">
             <div class="panel">
+                <a href="projects.html#GPU_WFC">
+                    <div class="panel-img">
+                        <img class="panel-img auto-scaling" src="projects/gpu_wfc/RegularConstraints_128_128.png"
+                            alt="Panel 1">
+                    </div>
+                    <div>
+                        <h2 class="image-text-bottom-left">GPU Accelerated WFC</h2>
+                        <p>Bachelor Thesis</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="panel">
                 <a href="projects.html">
-                    <img src="images/WhiteRoom_Poster.jpg" alt="Panel 1">
+                    <div class="panel-img">
+                        <img class="panel-img" src="images/WhiteRoom_Poster.jpg" alt="Panel 2">
+                    </div>
                     <div>
                         <h2 class="image-text-bottom-left">WhiteRoom</h2>
                         <p>Project 1</p>
@@ -91,17 +89,9 @@
 
             <div class="panel">
                 <a href="projects.html">
-                    <img src="images/WhiteRoom_Poster.jpg" alt="Panel 2">
-                    <div>
-                        <h2 class="image-text-bottom-left">WhiteRoom</h2>
-                        <p>Project 1</p>
+                    <div class="panel-img">
+                        <img class="panel-img" src="images/WhiteRoom_Poster.jpg" alt="Panel 3">
                     </div>
-                </a>
-            </div>
-
-            <div class="panel">
-                <a href="projects.html">
-                    <img src="images/WhiteRoom_Poster.jpg" alt="Panel 3">
                     <div>
                         <h2 class="image-text-bottom-left">WhiteRoom</h2>
                         <p>Project 1</p>

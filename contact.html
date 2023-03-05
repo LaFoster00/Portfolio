@@ -20,14 +20,14 @@
     <div class="content-container">
         <div class="navigation">
             <!-- Desktop Navigation -->
-            <nav class="desktop-nav">
+            <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li class="active"><a href="contact.html">Contact</a></li>
+                    <li><a class="nav-link main-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li><a class="nav-link active" href="contact.html">Contact</a></li>
                 </ul>
 
-                <div class="logo-links">
+                <div class="nav-link logo-links">
                     <a href="https://www.linkedin.com/in/lasse-foster-4188271a1">
                         <img src="logos/linkedin_in_128.png" alt="linkedin_logo">
                     </a>
@@ -35,30 +35,13 @@
                         <img src="logos/github_light_120.png" alt="github_logo">
                     </a>
                 </div>
-            </nav>
-            <!-- Mobile Navigation -->
-            <div class="mobile-nav">
-                <a href="index.html">Home</a>
-                <!-- Navigation links (hidden by default) -->
-                <div id="mobile-links">
-                    <a href="projects.html">Projects</a>
-                    <a href="contact.html" class="active">Contact</a>
-
-                    <div class="logo-links">
-                        <a href="https://www.linkedin.com/in/lasse-foster-4188271a1">
-                            <img src="logos/linkedin_in_128.png" alt="linkedin_logo">
-                        </a>
-                        <a href="https://github.com/LaFoster00">
-                            <img src="logos/github_light_120.png" alt="github_logo">
-                        </a>
-                    </div>
-                </div>
 
                 <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                <a href="javascript:void(0);" class="icon" onclick="mobileNavExpand()">
+                <a id="hamburger-menu" href="javascript:void(0);" class="hamburger-nav-icon"
+                    onclick="mobileNavExpand()">
                     <i class="fa fa-bars"></i>
                 </a>
-            </div>
+            </nav>
         </div>
 
         <div class="section-container">
@@ -70,11 +53,11 @@
 
                     <input type="hidden" name="_next" value="https://lafoster00.github.io/Portfolio/contact.html">
 
-                    <label for="Email" class="fcf-label">Your email address</label>
+                    <label for="Email" class="form-label">Your email address</label>
                     <input type="email" id="Email" name="email" class="form-control" placeholder="Email Address"
                         required>
 
-                    <label for="Message" class="fcf-label">Your message</label>
+                    <label for="Message" class="form-label">Your message</label>
                     <textarea id="Message" name="message" class="form-control" placeholder="Message" rows="6"
                         maxlength="3000" required></textarea>
 
