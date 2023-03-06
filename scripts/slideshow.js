@@ -88,5 +88,5 @@ function setupSlideshow(container) {
 // Call the function for each slideshow container on the page
 const slideshowContainers = document.querySelectorAll(".slideshow");
 slideshowContainers.forEach(function(container) {
-  setupSlideshow(container);
+ setupSlideshow(container);
 });

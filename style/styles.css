@@ -359,9 +359,8 @@ input[type=submit] {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: green;
   overflow: hidden;
-  opacity: 0;
+  display: none;
 }
 
 .slide-image {
@@ -373,8 +372,8 @@ input[type=submit] {
 
 .arrow {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 6rem;
+  bottom: 6rem;
   font-size: 3rem;
   font-weight: bold;
   display: flex;
@@ -417,7 +416,7 @@ input[type=submit] {
 }
 
 .slideshow-active {
-  opacity: 1;
+  display: block;
 }
 
 .no-padding {
@@ -437,6 +436,21 @@ input[type=submit] {
   .project-container{
     grid-template-columns: 1fr;
   }
+}
+
+.slide-video{
+  height: 100%;
+  width: 100%;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  color: var(--bg-color-accent);
+  opacity: 0.5;
+  cursor: pointer;
+  user-select: none;
 }
 
 
