@@ -1,108 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porfolio Lasse Foster</title>
+    <title>Portfolio Lasse Foster</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="style/styles.css" />
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet" />
-
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script src="scripts/nav-behaviour.js"></script>
 </head>
 
-<body class="bg-color">
-    <div class="content-container">
-        <div class="navigation">
-            <!-- Desktop Navigation -->
-            <nav>
-                <ul>
-                    <li><a class="nav-link main-link active" href="index.html">Home</a></li>
-                    <li><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-
-                <div class="nav-link logo-links">
-                    <a href="https://www.linkedin.com/in/lasse-foster-4188271a1">
-                        <img src="logos/linkedin_in_128.png" alt="linkedin_logo">
-                    </a>
-                    <a href="https://github.com/LaFoster00">
-                        <img src="logos/github_light_120.png" alt="github_logo">
-                    </a>
-                </div>
-
-                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-                <a id="hamburger-menu" href="javascript:void(0);" class="hamburger-nav-icon"
-                    onclick="mobileNavExpand()">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </nav>
+<body>
+    <t-header></t-header>
+    <section>
+        <div>
+            <h1>Sharp heading</h1>
+            <p>This is a paragraph under the heading.</p>
+            <button onclick="toggleLightMode()">Click Me</button>
         </div>
-
-        <div class="section-container">
-            <h1>Lasse Foster</h1>
-            <p>
-                I am a <span id="age">unknown</span> years old C#/C++ developer with a bachelor of arts
-                degree in 'Animation And Game', specialized in software development.
-                My greatest passion is engine and rendering development, but I gained extensive knowledge in the field
-                of game and VR development as well.
-                My working languages include <span class="highlight">C++</span>, <span class="highlight">C#</span>,
-                <span class="highlight">Java</span> and the basics of <span class="highlight">C</span>. Furthermore im
-                quite familiar with shading languages such as <span class="highlight">GLSL</span> and <span
-                    class="highlight">HLSL</span>, which I used in my Bachelor thesis for an implementation of
-                GPU accelerated wavefunction collapse.
-            </p>
-        </div>
-
-        <h1>PROJECT OVERVIEW</h1>
-
-        <div class="panel-container">
-            <div class="panel">
-                <a href="projects.html#GPU_WFC">
-                    <div class="panel-img">
-                        <img class="panel-img auto-scaling" src="projects/gpu_wfc/RegularConstraints_128_128.png"
-                            alt="Panel 1">
-                    </div>
-                    <div>
-                        <h2 class="image-text-bottom-left">GPU Accelerated WFC</h2>
-                        <p>Bachelor Thesis</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="panel">
-                <a href="projects.html">
-                    <div class="panel-img">
-                        <img class="panel-img" src="images/WhiteRoom_Poster.jpg" alt="Panel 2">
-                    </div>
-                    <div>
-                        <h2 class="image-text-bottom-left">WhiteRoom</h2>
-                        <p>Project 1</p>
-                    </div>
-                </a>
-            </div>
-
-            <div class="panel">
-                <a href="projects.html">
-                    <div class="panel-img">
-                        <img class="panel-img" src="images/WhiteRoom_Poster.jpg" alt="Panel 3">
-                    </div>
-                    <div>
-                        <h2 class="image-text-bottom-left">WhiteRoom</h2>
-                        <p>Project 1</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <footer></footer>
-    </div>
-    <script src="scripts/age.js"></script>
+    </section>
+    <script>
+        function toggleLightMode() { document.body.classList.toggle('light'); }
+    </script>
+    <script src="scripts/components.js"></script>
+    <script src="scripts/nav-behaviour.js"></script>
 </body>
+
 
 </html>
