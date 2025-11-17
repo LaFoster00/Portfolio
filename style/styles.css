@@ -50,7 +50,7 @@
   --spacing7: 160px;
 }
 
-body.light {
+html.light {
   --bg-dark: hsl(0 0% 90%);
   --bg: hsl(0 0% 95%);
   --bg-light: hsl(300 50% 100%);
@@ -76,6 +76,7 @@ body {
   font: var(--p);
   background: var(--bg-dark);
   color: var(--text-muted);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
@@ -94,6 +95,7 @@ p {
 a {
   color: var(--text-muted);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -204,6 +206,7 @@ nav {
   display: flex;
   align-items: center;
   gap: var(--spacing5);
+  transition: all 0.3s ease;
 }
 
 .ham {
@@ -211,11 +214,35 @@ nav {
   width: var(--spacing4);
   height: var(--spacing4);
   color: var(--text-muted);
+  transition: color 0.3s ease;
 }
 
 .ham:hover {
   cursor: pointer;
   color: var(--text);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--spacing2);
+  border-radius: var(--spacing1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: var(--bg-light);
+}
+
+.theme-toggle svg {
+  width: var(--spacing4);
+  height: var(--spacing4);
 }
 
 @media (max-width: 32rem) {

@@ -7,20 +7,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="style/styles.css" />
+    <script>
+        // Apply saved theme immediately to prevent flash
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.classList.add('light');
+        }
+    </script>
 </head>
 
 <body>
     <t-header></t-header>
-    <section>
-        <div>
-            <h1>Sharp heading</h1>
-            <p>This is a paragraph under the heading.</p>
-            <button onclick="toggleLightMode()">Click Me</button>
-        </div>
-    </section>
-    <script>
-        function toggleLightMode() { document.body.classList.toggle('light'); }
-    </script>
     <script src="scripts/components.js"></script>
     <script src="scripts/nav-behaviour.js"></script>
 </body>
