@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Portfolio Lasse Foster</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <script>
+        // Apply saved theme immediately to prevent flash
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.classList.add('light');
+        }
+    </script>
+</head>
+
+<body>
+    <t-header></t-header>
+
+    <section class="hero">
+        <h1>Lasse Foster</h1>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p>
+                    I am a <span id="age">unknown</span> years old C++/C# developer with a bachelor of arts
+                    degree in 'Animation And Game', soon to be Master Of Science Informatics, specialized in interactive
+                    software development.
+                    My greatest passion is engine and rendering development, but I was part of multiple VR and game
+                    projects as well, both in the context of university, and professionally. I am especially proficient
+                    in C++ and C#, C++ being the language I have the most professional experience with.
+                </p>
+                <P>
+                    Over the years I have worked on various projects, both professionally and privately. You can find a
+                    selection of them <a href="projects.html" class="highlight">here</a>.
+                </P>
+            </div>
+            <figure>
+                <img src="images/Me.webp" alt="Portrait of Lasse Foster" loading="lazy" />
+            </figure>
+        </div>
+    </section>
+
+    <script src="scripts/components.js"></script>
+    <script src="scripts/nav-behaviour.js"></script>
+    <script src="scripts/age.js"></script>
+</body>
+
+
+</html>

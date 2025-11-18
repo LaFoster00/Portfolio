@@ -14,6 +14,7 @@ class THeader extends HTMLElement {
             <nav>
                 <a href="index.html">About Me</a>
                 <a href="projects.html">Projects</a>
+                <a href="aboutme.html">About Me</a>
                 <a href="contact.html">Contact</a>
             </nav>
             <button class="theme-toggle" onclick="toggleLightMode()" aria-label="Toggle theme">

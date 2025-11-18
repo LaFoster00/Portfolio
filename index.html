@@ -18,8 +18,101 @@
 
 <body>
     <t-header></t-header>
+
+    <section>
+        <h1>Lasse Foster</h1>
+        <p>
+            I am a <span id="age">unknown</span> years old C++/C# developer with a bachelor of arts
+            degree in 'Animation And Game', soon to be Master Of Science Informatics, specialized in interactive
+            software development.
+        </p>
+    </section>
+
+    <section class="projects-section">
+        <div class="section-heading">
+            <h1>Projects</h1>
+            <p>This is a collection of some of the projects I worked on over the years and should give you a rough
+                impression of my experience. </p>
+        </div>
+        <div class="project-card-list">
+            <article class="project-card">
+                <a href="projects.html#GPU_WFC" aria-label="View GPU Accelerated WFC project">
+                    <figure class="project-card__preview">
+                        <img src="projects/gpu_wfc/canvas.png" alt="GPU Accelerated WFC preview" loading="lazy">
+                    </figure>
+                    <div class="project-card__body">
+                        <h3>GPU Accelerated WFC</h3>
+                        <p class="project-card__summary">A bachelor thesis project that explores the Wave Function
+                            Collapse algorithm on modern GPUs, researching its applicability for parallelization.</p>
+                        <div class="project-card__roles">
+                            <span>GPU Programming</span>
+                            <span>Systems Architecture</span>
+                        </div>
+                        <span class="project-card__cta">View project →</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card">
+                <a href="projects.html#SLIPPER" aria-label="View Slipper Engine project">
+                    <figure class="project-card__preview">
+                        <img src="projects/slipper/Slipper_1.png" alt="Slipper Engine preview" loading="lazy">
+                    </figure>
+                    <div class="project-card__body">
+                        <h3>Slipper Engine</h3>
+                        <p class="project-card__summary">A from-scratch Vulkan renderer with a modular frame graph, PBR
+                            materials, and tooling geared toward rapid iteration.</p>
+                        <div class="project-card__roles">
+                            <span>Engine Programmer</span>
+                            <span>Tools Developer</span>
+                        </div>
+                        <span class="project-card__cta">View project →</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card">
+                <a href="projects.html#MARKET_THIEF" aria-label="View Market Thief project">
+                    <figure class="project-card__preview">
+                        <img src="projects/market_thief/Layer_VisibilityInfluence.png" alt="Market Thief preview"
+                            loading="lazy">
+                    </figure>
+                    <div class="project-card__body">
+                        <h3>Market Thief</h3>
+                        <p class="project-card__summary">A stealth sandbox exploring systemic crowd simulation and
+                            perception-driven AI behaviors for dynamic heists.</p>
+                        <div class="project-card__roles">
+                            <span>AI Programmer</span>
+                            <span>Gameplay Designer</span>
+                        </div>
+                        <span class="project-card__cta">View project →</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-card">
+                <a href="projects.html#WHITE_ROOM" aria-label="View White Room project">
+                    <figure class="project-card__preview">
+                        <img src="projects/WhiteRoom/WhiteRoom_Poster.jpg" alt="White Room preview" loading="lazy">
+                    </figure>
+                    <div class="project-card__body">
+                        <h2>White Room</h2>
+                        <p class="project-card__summary">An experimental narrative prototype focusing on atmosphere,
+                            diegetic UI, and environmental storytelling.</p>
+                        <div class="project-card__roles">
+                            <span>Technical Designer</span>
+                            <span>UX Prototyper</span>
+                        </div>
+                        <span class="project-card__cta">View project →</span>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+
     <script src="scripts/components.js"></script>
     <script src="scripts/nav-behaviour.js"></script>
+    <script src="scripts/age.js"></script>
 </body>
 
 
