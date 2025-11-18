@@ -81,9 +81,8 @@ class TSlideshow extends HTMLElement {
             slide.appendChild(element);
             slidesWrapper.appendChild(slide);
 
-            const meta = { slide, media: element, ratio: null };
+            const meta = { slide, media: element };
             this._slidesMeta.push(meta);
-            this._captureRatio(meta);
         });
 
         this.textContent = '';
@@ -97,93 +96,13 @@ class TSlideshow extends HTMLElement {
             this._createIndicators();
         }
 
-        this._handleResize = () => this._syncHeight();
         window.addEventListener('resize', this._handleResize);
-        requestAnimationFrame(() => this._syncHeight());
     }
 
     disconnectedCallback() {
         if (this._handleResize) {
             window.removeEventListener('resize', this._handleResize);
         }
-    }
-
-    _captureRatio(meta) {
-        const el = meta.media;
-        if (!el) return;
-        const tag = el.tagName.toLowerCase();
-        if (tag === 'img') {
-            const setRatio = () => {
-                if (el.naturalWidth && el.naturalHeight) {
-                    meta.ratio = el.naturalWidth / el.naturalHeight;
-                    this._syncHeight();
-                }
-            };
-            if (el.complete) {
-                setRatio();
-            } else {
-                el.addEventListener('load', setRatio, { once: true });
-            }
-        } else if (tag === 'video') {
-            const updateRatio = () => {
-                if (el.videoWidth && el.videoHeight) {
-                    meta.ratio = el.videoWidth / el.videoHeight;
-                    this._syncHeight();
-                }
-            };
-            if (el.readyState >= 1) {
-                updateRatio();
-            } else {
-                el.addEventListener('loadedmetadata', updateRatio, { once: true });
-            }
-        } else if (tag === 'iframe') {
-            const widthAttr = parseFloat(el.getAttribute('width'));
-            const heightAttr = parseFloat(el.getAttribute('height'));
-            if (widthAttr && heightAttr) {
-                meta.ratio = widthAttr / heightAttr;
-            } else {
-                meta.ratio = this._baseAspect;
-            }
-        } else {
-            meta.ratio = null;
-        }
-    }
-
-    _getActiveRatio() {
-        return this._slidesMeta?.[this._currentIndex]?.ratio || null;
-    }
-
-    _syncHeight() {
-        if (!this.isConnected) return;
-        const wrapper = this.querySelector('.slideshow__slides');
-        if (!wrapper) return;
-
-        const detail = this.closest('.project-detail');
-        const textHeight = detail?.querySelector('.project-detail__content')?.offsetHeight || null;
-        const width = this.offsetWidth;
-        if (!width) return;
-
-        const viewportCap = window.innerHeight ? window.innerHeight * 0.8 : Infinity;
-        const baseHeight = Math.min(width / this._baseAspect, viewportCap);
-        let targetHeight = baseHeight;
-
-        const ratio = this._getActiveRatio();
-        if (ratio) {
-            const neededHeight = Math.min(width / ratio, viewportCap);
-            if (neededHeight > baseHeight) {
-                targetHeight = neededHeight;
-            }
-        }
-
-        if (textHeight && targetHeight > textHeight) {
-            targetHeight = textHeight;
-        }
-
-        targetHeight = Math.max(targetHeight, 240);
-
-        this.style.setProperty('--slideshow-height', `${targetHeight}px`);
-        this.style.height = `${targetHeight}px`;
-        wrapper.style.height = '100%';
     }
 
     _createControls() {
@@ -234,7 +153,6 @@ class TSlideshow extends HTMLElement {
             this._indicators[index].classList.add('is-active');
         }
         this._currentIndex = index;
-        this._syncHeight();
     }
 }
 customElements.define('t-slideshow', TSlideshow);
