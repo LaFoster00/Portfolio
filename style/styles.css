@@ -338,6 +338,8 @@ nav {
 }
 
 .project-card {
+  height: 100%;
+  width: 100%;
   background-image: var(--gradient);
   border: var(--border-card);
   border-radius: calc(var(--spacing2) * 1.5);

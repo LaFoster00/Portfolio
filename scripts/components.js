@@ -28,6 +28,36 @@ class THeader extends HTMLElement {
 }
 customElements.define('t-header', THeader);
 
+class ProjectCard extends HTMLElement {
+    connectedCallback() {
+        const href = this.getAttribute('href');
+        const image = this.getAttribute('image');
+        const imageAlt = this.getAttribute('image-alt');
+        const title = this.getAttribute('title');
+        const summary = this.getAttribute('summary');
+        const roles = this.getAttribute('roles') ? this.getAttribute('roles').split(',') : [];
+        const roleSpans = roles.map(role => `<span>${role.trim()}</span>`).join('\n');
+        this.innerHTML = `
+        <article class="project-card">
+            <a href="${href}" aria-label="${title}">
+                <figure class="project-card__preview">
+                    <img src="${image}" alt="${imageAlt}" loading="lazy">
+                </figure>
+                <div class="project-card__body">
+                    <h3>${title}</h3>
+                    <p class="project-card__summary">${summary}</p>
+                    <div class="project-card__roles">
+                        ${roleSpans}
+                    </div>
+                    <span class="project-card__cta">View project →</span>
+                </div>
+            </a>
+        </article>
+        `;
+    }
+}
+customElements.define('t-project-card', ProjectCard);
+
 // Theme toggle function with persistence
 function toggleLightMode() {
     document.documentElement.classList.toggle('light');
