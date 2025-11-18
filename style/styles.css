@@ -469,6 +469,15 @@ nav {
   .project-detail--reverse .project-detail__content {
     order: 0;
   }
+
+  .project-detail__media .slideshow__slide {
+    width: 100%;
+    height: 22rem;
+  }
+
+  .project-detail__media .slideshow__slide.is-active {
+    position: relative;
+  }
 }
 
 .project-detail__media {
