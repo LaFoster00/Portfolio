@@ -12,7 +12,7 @@ class THeader extends HTMLElement {
                     stroke-linejoin="round" />
             </svg>
             <nav>
-                <a href="index.html">About Me</a>
+                <a href="index.html">Home</a>
                 <a href="projects.html">Projects</a>
                 <a href="aboutme.html">About Me</a>
                 <a href="contact.html">Contact</a>
@@ -57,6 +57,187 @@ class ProjectCard extends HTMLElement {
     }
 }
 customElements.define('t-project-card', ProjectCard);
+
+class TSlideshow extends HTMLElement {
+    connectedCallback() {
+        if (this._initialized) return;
+        const rawSlides = Array.from(this.children).filter(node => node.nodeType === Node.ELEMENT_NODE);
+        if (!rawSlides.length) return;
+
+        this._initialized = true;
+        this.classList.add('slideshow');
+        this._baseAspect = 16 / 9;
+
+        const slidesWrapper = document.createElement('div');
+        slidesWrapper.className = 'slideshow__slides';
+
+        this._slidesMeta = [];
+
+        rawSlides.forEach((element, index) => {
+            const slide = document.createElement('div');
+            slide.className = 'slideshow__slide';
+            if (index === 0) slide.classList.add('is-active');
+            element.classList.add('slideshow__media');
+            slide.appendChild(element);
+            slidesWrapper.appendChild(slide);
+
+            const meta = { slide, media: element, ratio: null };
+            this._slidesMeta.push(meta);
+            this._captureRatio(meta);
+        });
+
+        this.textContent = '';
+        this.appendChild(slidesWrapper);
+
+        this._slides = Array.from(slidesWrapper.children);
+        this._currentIndex = 0;
+
+        if (this._slides.length > 1) {
+            this._createControls();
+            this._createIndicators();
+        }
+
+        this._handleResize = () => this._syncHeight();
+        window.addEventListener('resize', this._handleResize);
+        requestAnimationFrame(() => this._syncHeight());
+    }
+
+    disconnectedCallback() {
+        if (this._handleResize) {
+            window.removeEventListener('resize', this._handleResize);
+        }
+    }
+
+    _captureRatio(meta) {
+        const el = meta.media;
+        if (!el) return;
+        const tag = el.tagName.toLowerCase();
+        if (tag === 'img') {
+            const setRatio = () => {
+                if (el.naturalWidth && el.naturalHeight) {
+                    meta.ratio = el.naturalWidth / el.naturalHeight;
+                    this._syncHeight();
+                }
+            };
+            if (el.complete) {
+                setRatio();
+            } else {
+                el.addEventListener('load', setRatio, { once: true });
+            }
+        } else if (tag === 'video') {
+            const updateRatio = () => {
+                if (el.videoWidth && el.videoHeight) {
+                    meta.ratio = el.videoWidth / el.videoHeight;
+                    this._syncHeight();
+                }
+            };
+            if (el.readyState >= 1) {
+                updateRatio();
+            } else {
+                el.addEventListener('loadedmetadata', updateRatio, { once: true });
+            }
+        } else if (tag === 'iframe') {
+            const widthAttr = parseFloat(el.getAttribute('width'));
+            const heightAttr = parseFloat(el.getAttribute('height'));
+            if (widthAttr && heightAttr) {
+                meta.ratio = widthAttr / heightAttr;
+            } else {
+                meta.ratio = this._baseAspect;
+            }
+        } else {
+            meta.ratio = null;
+        }
+    }
+
+    _getActiveRatio() {
+        return this._slidesMeta?.[this._currentIndex]?.ratio || null;
+    }
+
+    _syncHeight() {
+        if (!this.isConnected) return;
+        const wrapper = this.querySelector('.slideshow__slides');
+        if (!wrapper) return;
+
+        const detail = this.closest('.project-detail');
+        const textHeight = detail?.querySelector('.project-detail__content')?.offsetHeight || null;
+        const width = this.offsetWidth;
+        if (!width) return;
+
+        const viewportCap = window.innerHeight ? window.innerHeight * 0.8 : Infinity;
+        const baseHeight = Math.min(width / this._baseAspect, viewportCap);
+        let targetHeight = baseHeight;
+
+        const ratio = this._getActiveRatio();
+        if (ratio) {
+            const neededHeight = Math.min(width / ratio, viewportCap);
+            if (neededHeight > baseHeight) {
+                targetHeight = neededHeight;
+            }
+        }
+
+        if (textHeight && targetHeight > textHeight) {
+            targetHeight = textHeight;
+        }
+
+        targetHeight = Math.max(targetHeight, 240);
+
+        this.style.setProperty('--slideshow-height', `${targetHeight}px`);
+        this.style.height = `${targetHeight}px`;
+        wrapper.style.height = '100%';
+    }
+
+    _createControls() {
+        const prev = this._buildArrow('prev', 'Previous slide', '‹');
+        const next = this._buildArrow('next', 'Next slide', '›');
+        this.append(prev, next);
+    }
+
+    _buildArrow(direction, label, symbol) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = `slideshow__arrow slideshow__arrow--${direction}`;
+        button.setAttribute('aria-label', label);
+        button.innerHTML = symbol;
+        button.addEventListener('click', () => {
+            this._changeSlide(direction === 'next' ? 1 : -1);
+        });
+        return button;
+    }
+
+    _createIndicators() {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'slideshow__indicators';
+        this._indicators = this._slides.map((_, index) => {
+            const indicator = document.createElement('button');
+            indicator.type = 'button';
+            indicator.className = 'slideshow__indicator';
+            indicator.setAttribute('aria-label', `Go to slide ${index + 1}`);
+            if (index === 0) indicator.classList.add('is-active');
+            indicator.addEventListener('click', () => this._setActiveSlide(index));
+            wrapper.appendChild(indicator);
+            return indicator;
+        });
+        this.appendChild(wrapper);
+    }
+
+    _changeSlide(delta) {
+        const nextIndex = (this._currentIndex + delta + this._slides.length) % this._slides.length;
+        this._setActiveSlide(nextIndex);
+    }
+
+    _setActiveSlide(index) {
+        if (index === this._currentIndex) return;
+        this._slides[this._currentIndex].classList.remove('is-active');
+        this._slides[index].classList.add('is-active');
+        if (this._indicators) {
+            this._indicators[this._currentIndex].classList.remove('is-active');
+            this._indicators[index].classList.add('is-active');
+        }
+        this._currentIndex = index;
+        this._syncHeight();
+    }
+}
+customElements.define('t-slideshow', TSlideshow);
 
 // Theme toggle function with persistence
 function toggleLightMode() {

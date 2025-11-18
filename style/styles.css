@@ -8,6 +8,8 @@
 }
 
 :root {
+  --max-width: 1200px;
+
   --ff: "Roboto Mono", monospace;
   --h1: bold 1.125rem/1.4em var(--ff);
   --h2: bold 1rem/1.4em var(--ff);
@@ -26,6 +28,8 @@
   --secondary: hsl(111 33% 64%);
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+  --gradient-light: linear-gradient(0deg, var(--bg-light) 95%, var(--bg-light));
+  --gradient-light-hover: linear-gradient(0deg, var(--bg-light), var(--bg-light));
   --border-card: solid 1px var(--border-muted);
   --shadow-s:
   inset 0 1px 2px #ffffff30, /* top highlight */
@@ -68,6 +72,9 @@ html.light {
   --secondary: hsl(112 49% 22%);
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(45deg, var(--bg), var(--bg-light));
+  --gradient-light: linear-gradient(0deg, var(--bg-light) 95%, var(--bg-light));
+  --gradient-light-hover: linear-gradient(0deg, var(--bg-light), var(--bg-light));
+  
   --border-card: solid 1px var(--bg)
 }
 
@@ -112,7 +119,7 @@ a:hover {
 /* Utility Classes */
 section {
   width: 90%;
-  max-width: 1080px;
+  max-width: var(--max-width);
   margin: 0 auto;
   margin-bottom: var(--spacing4);
   padding: var(--spacing4);
@@ -210,7 +217,7 @@ section {
 /* Header */
 header {
   width: 90%;
-  max-width: 1080px;
+  max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -331,6 +338,12 @@ nav {
   gap: var(--spacing4);
 }
 
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing2);
+}
+
 .project-card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
@@ -414,4 +427,184 @@ nav {
   .project-card-list {
     grid-template-columns: 1fr;
   }
+}
+
+/* Detailed projects page */
+.project-detail {
+  display: grid;
+  gap: var(--spacing4);
+  grid-template-columns: 1.2fr 1fr;
+  align-items: stretch;
+}
+
+.project-detail--reverse {
+  grid-template-columns: 1fr 1.2fr;
+
+  .project-detail__media {
+    order: 2;
+  }
+
+  .project-detail__content {
+    order: 1;
+  }
+}
+
+.project-detail__eyebrow {
+  font: var(--p2);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+@media (max-width: 62rem) {
+  .project-detail,
+  .project-detail--reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail--reverse .project-detail__media {
+    order: -1;
+  }
+
+  .project-detail--reverse .project-detail__content {
+    order: 0;
+  }
+}
+
+.project-detail__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-detail__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing2);
+}
+
+.project-detail__list {
+  padding-left: var(--spacing4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing1);
+}
+
+.project-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing1);
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    font: var(--p2);
+    padding: var(--spacing1) var(--spacing2);
+    border-radius: 999px;
+    background: var(--bg-light);
+    color: var(--text);
+    box-shadow: var(--shadow-m);
+  }
+}
+
+/* Slideshow component */
+.slideshow {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--spacing2);
+  background: transparent;
+}
+
+.slideshow__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow__slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slideshow__slide > * {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: none;
+  box-shadow: var(--shadow-m);
+}
+
+.slideshow__slide iframe {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.slideshow__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--spacing5);
+  height: var(--spacing5);
+  border-radius: 50%;
+  border: none;
+  color: var(--text-muted);
+  background: var(--bg-light);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  z-index: 2;
+  box-shadow: var(--shadow-m);
+  opacity: 0.5;
+}
+
+.slideshow__arrow:hover {
+  background: var(--secondary);
+  color: var(--bg-dark);
+  opacity: 1;
+}
+
+.slideshow__arrow--prev {
+  left: var(--spacing2);
+}
+
+.slideshow__arrow--next {
+  right: var(--spacing2);
+}
+
+.slideshow__indicators {
+  position: absolute;
+  bottom: var(--spacing2);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing1);
+  z-index: 2;
+}
+
+.slideshow__indicator {
+  background: var(--bg-light);
+  box-shadow: var(--shadow-s);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.slideshow__indicator.is-active {
+  background: var(--secondary);
+  border-color: var(--secondary);
 }

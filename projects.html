@@ -16,114 +16,137 @@
     </script>
 </head>
 
-<body class="bg-color">
+<body>
     <t-header></t-header>
 
-    <div class="content-container">
-        <div id="GPU_WFC" class="section-container no-padding project-container">
-            <div class="slideshow">
-                <div class="slide">
-                    <img src="projects/gpu_wfc/canvas.png" alt="gpu-wfc-cover" class="slide-image">
-                </div>
-                <div class="slide">
-                    <img src="projects/gpu_wfc/RegularConstraints_128_128.png" alt="gpu-wfc-regconstr"
-                        class="slide-image auto-scaling">
-                </div>
-                <div class="slide">
-                    <img src="images/BG.jpg" alt="gpu-wfc-regconstr" class="slide-image">
-                </div>
+    <main>
+        <section class="section-heading">
+            <h1>Projects</h1>
+            <p>Deep dives into the systems and tools I've built over the last few years. Each project pairs a quick
+                overview with media captures so you can get a feel for performance, polish, and the roles I fulfilled.
+            </p>
             </div>
-            <div class="project-text">
-                <h2>GPU Accelerated WFC</h2>
-                <h3>Bachelor Thesis</h3>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna
-                aliqua. Non enim praesent elementum facilisis leo vel fringilla. Nunc consequat interdum varius sit amet
-                mattis
-                vulputate enim. Aenean et tortor at risus viverra adipiscing at in. Mattis pellentesque id nibh tortor
-                id aliquet lectus
-                proin nibh. Consectetur adipiscing elit duis tristique. Pellentesque elit eget gravida cum. Augue eget
-                arcu dictum
-                varius. Scelerisque purus semper eget duis. Ut porttitor leo a diam sollicitudin tempor id eu. Mi sit
-                amet mauris
-                commodo. Pellentesque massa placerat duis ultricies. Sed turpis tincidunt id aliquet risus feugiat.
-                Lacinia quis vel
-                eros donec ac odio. Et tortor consequat id porta nibh venenatis cras sed. Integer malesuada nunc vel
-                risus.
+        </section>
 
-                Commodo viverra maecenas accumsan lacus vel facilisis volutpat. Sit amet purus gravida quis blandit
-                turpis cursus. Id
-                ornare arcu odio ut sem nulla pharetra diam sit. Tincidunt augue interdum velit euismod in pellentesque
-                massa. Fermentum
-                odio eu feugiat pretium. Vel orci porta non pulvinar. Sapien eget mi proin sed libero enim sed faucibus
-                turpis. Amet
-                venenatis urna cursus eget nunc scelerisque viverra mauris. Libero nunc consequat interdum varius sit.
-                Nullam vehicula
-                ipsum a arcu. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Risus at
-                ultrices mi tempus
-                imperdiet nulla malesuada pellentesque elit. Cras sed felis eget velit aliquet sagittis. Arcu ac tortor
-                dignissim
-                convallis. Iaculis at erat pellentesque adipiscing commodo elit at. Lectus urna duis convallis convallis
-                tellus id. Eu
-                turpis egestas pretium aenean pharetra magna ac placerat vestibulum.
+        <section id="GPU_WFC" class="project-detail">
+            <div class="project-detail__media">
+                <t-slideshow>
+                    <img src="projects/gpu_wfc/canvas.png" alt="GPU WFC large canvas result" loading="lazy" />
+                    <img src="projects/gpu_wfc/RegularConstraints_128_128.png" alt="GPU WFC constraint heatmap"
+                        loading="lazy" />
+                    <img src="images/BG.jpg" alt="GPU WFC debug overlay" loading="lazy" />
+                </t-slideshow>
             </div>
-        </div>
-
-        <div id="SLIPPER" class="section-container no-padding project-container">
-            <div class="slideshow">
-                <div class="slide">
-                    <img src="projects/slipper/Slipper_1.png" alt="Slipper 1" class="slide-image">
+            <div class="project-detail__content">
+                <p class="project-detail__eyebrow">Lorem Ipsum · Dolor Sit</p>
+                <h2>GPU Accelerated Wave Function Collapse</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum, velit a suscipit tempus,
+                    ligula sem tempus eros, nec fermentum ipsum velit sed nulla.</p>
+                <ul class="project-detail__list">
+                    <li>Curabitur vehicula sapien sed lorem faucibus, quis cursus nisl fermentum.</li>
+                    <li>Morbi ultrices, justo ut imperdiet luctus, ligula neque sagittis mi, sed pharetra urna justo
+                        sit amet nisl.</li>
+                    <li>Donec dictum, libero sed pulvinar facilisis, risus orci tristique quam, vitae dignissim nunc
+                        arcu at ipsum.</li>
+                </ul>
+                <div class="project-detail__tags">
+                    <span>C++20</span>
+                    <span>CUDA</span>
+                    <span>Rendering Tools</span>
                 </div>
             </div>
-            <div class="project-text">
+        </section>
+
+        <section id="SLIPPER" class="project-detail project-detail--reverse">
+            <div class="project-detail__media">
+                <t-slideshow>
+                    <img src="projects/slipper/Slipper_1.png" alt="Slipper Engine deferred renderer" loading="lazy" />
+                </t-slideshow>
+            </div>
+            <div class="project-detail__content">
+                <p class="project-detail__eyebrow">Lorem Ipsum · Dolor Sit</p>
                 <h2>Slipper Engine</h2>
-                <h3>C++ Vulkan Render Engine</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum, velit a suscipit tempus,
+                    ligula sem tempus eros, nec fermentum ipsum velit sed nulla.</p>
+                <ul class="project-detail__list">
+                    <li>Curabitur vehicula sapien sed lorem faucibus, quis cursus nisl fermentum.</li>
+                    <li>Morbi ultrices, justo ut imperdiet luctus, ligula neque sagittis mi, sed pharetra urna justo
+                        sit amet nisl.</li>
+                    <li>Donec dictum, libero sed pulvinar facilisis, risus orci tristique quam, vitae dignissim nunc
+                        arcu at ipsum.</li>
+                </ul>
+                <div class="project-detail__tags">
+                    <span>Vulkan</span>
+                    <span>C++</span>
+                    <span>Tooling</span>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div id="WHITE_ROOM" class="section-container no-padding project-container">
-            <div class="slideshow">
-                <div class="slide">
-                    <iframe class="slide-image" src="https://www.youtube-nocookie.com/embed/huE_bYDYYR0"
-                        title="YouTube video player" frameborder="0"
+        <section id="MARKET_THIEF" class="project-detail">
+            <div class="project-detail__media">
+                <t-slideshow>
+                    <iframe src="https://www.youtube-nocookie.com/embed/huE_bYDYYR0" title="Market Thief overview"
+                        loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
-                </div>
-                <div class="slide">
-                    <video src="projects/market_thief/Crowd_Test_Character.mp4" controls muted loop class="slide-image"
-                        type="video/mp4"></video>
-                </div>
-                <div class="slide">
-                    <video src="projects/market_thief/Guard_Patrolling.mp4" controls muted loop class="slide-image"
-                        type="video/mp4"></video>
-                </div>
-                <div class="slide">
+                    <video src="projects/market_thief/Crowd_Test_Character.mp4" controls muted loop playsinline></video>
+                    <video src="projects/market_thief/Guard_Patrolling.mp4" controls muted loop playsinline></video>
                     <video src="projects/market_thief/Crowd_Test_Scene_Unselected.mp4" controls muted loop
-                        class="slide-image" type="video/mp4"></video>
+                        playsinline></video>
+                </t-slideshow>
+            </div>
+            <div class="project-detail__content">
+                <p class="project-detail__eyebrow">Lorem Ipsum · Dolor Sit</p>
+                <h2>Market Thief</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum, velit a suscipit tempus,
+                    ligula sem tempus eros, nec fermentum ipsum velit sed nulla.</p>
+                <ul class="project-detail__list">
+                    <li>Curabitur vehicula sapien sed lorem faucibus, quis cursus nisl fermentum.</li>
+                    <li>Morbi ultrices, justo ut imperdiet luctus, ligula neque sagittis mi, sed pharetra urna justo
+                        sit amet nisl.</li>
+                    <li>Donec dictum, libero sed pulvinar facilisis, risus orci tristique quam, vitae dignissim nunc
+                        arcu at ipsum.</li>
+                </ul>
+                <div class="project-detail__tags">
+                    <span>Unreal Engine</span>
+                    <span>AI Programming</span>
+                    <span>Gameplay Systems</span>
                 </div>
             </div>
-            <div class="project-text">
-                <h2>Market Thief</h2>
-                <h3>Bachelor Studies Project</h3>
-            </div>
-        </div>
+        </section>
 
-        <div id="MARKET_THIEF" class="section-container no-padding project-container">
-            <div class="slideshow">
-                <div class="slide">
-                    <iframe class="slide-image" src="https://www.youtube-nocookie.com/embed/C6lVvD6ZVCM"
-                        title="YouTube video player" frameborder="0"
+        <section id="WHITE_ROOM" class="project-detail project-detail--reverse">
+            <div class="project-detail__media">
+                <t-slideshow>
+                    <iframe src="https://www.youtube-nocookie.com/embed/C6lVvD6ZVCM" title="White Room teaser"
+                        loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
+                    <img src="projects/WhiteRoom/WhiteRoom_Poster.jpg" alt="White Room poster" loading="lazy" />
+                </t-slideshow>
+            </div>
+            <div class="project-detail__content">
+                <p class="project-detail__eyebrow">Lorem Ipsum · Dolor Sit</p>
+                <h2>White Room</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum, velit a suscipit tempus,
+                    ligula sem tempus eros, nec fermentum ipsum velit sed nulla.</p>
+                <ul class="project-detail__list">
+                    <li>Curabitur vehicula sapien sed lorem faucibus, quis cursus nisl fermentum.</li>
+                    <li>Morbi ultrices, justo ut imperdiet luctus, ligula neque sagittis mi, sed pharetra urna justo
+                        sit amet nisl.</li>
+                    <li>Donec dictum, libero sed pulvinar facilisis, risus orci tristique quam, vitae dignissim nunc
+                        arcu at ipsum.</li>
+                </ul>
+                <div class="project-detail__tags">
+                    <span>Unity</span>
+                    <span>VR</span>
+                    <span>Narrative Design</span>
                 </div>
             </div>
-            <div class="project-text">
-                <h2>White Room</h2>
-                <h3>Bachelor Studies Project</h3>
-            </div>
-        </div>
-    </div>
-    <script src="scripts/slideshow.js"></script>
+        </section>
+    </main>
+
     <script src="scripts/components.js"></script>
     <script src="scripts/nav-behaviour.js"></script>
 </body>
