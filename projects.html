@@ -22,9 +22,46 @@
     <main>
         <section class="section-heading">
             <h1>Projects</h1>
-            <p>Deep dives into the systems and tools I've built over the last few years. Each project pairs a quick
-                overview with media captures so you can get a feel for performance, polish, and the roles I fulfilled.
+            <p>Overview of the applications and projects I was involved in over the last few years. Each project pairs a
+                quick overview with media captures so you can get a feel for the implementation, project scope, and the
+                roles I fulfilled.
             </p>
+            <p> This is not an exhaustive list of all projects I have ever worked on. If you are interested in learning
+                more about my experiences, reach out to me directly via the contact information in the <a
+                    href="contact.html" class="highlight">contact</a> section.
+            </p>
+            </div>
+        </section>
+
+        <section id="DGIR" class="project-detail project-detail--reverse">
+            <div class="project-detail__media">
+                <t-slideshow>
+                    <img src="projects/gpu_wfc/canvas.png" alt="GPU WFC large canvas result" loading="lazy" />
+                </t-slideshow>
+            </div>
+            <div class="project-detail__content">
+                <p class="project-detail__eyebrow">Master Thesis · Hochschule Bielefeld</p>
+                <h2><a href="https://github.com/LaFoster00/Dungeon" target="_blank" rel="noopener noreferrer">DGIR: An
+                        Extensible Intermediate Representation for Educational Applications</a></h2>
+                <p>My master's thesis focused on implementing a extensible intermediate representation for educational
+                    applications, such as interactive learning environments and custom scripting engines.</p>
+                <ul class="project-detail__list">
+                    <li>Final Grade: 1.1 (german grading system)</li>
+                    <li>Hybrid approach combining <a href="https://github.com/sampsyo/bril" target="_blank"
+                            rel="noopener noreferrer">Bril</a> and <a href="https://github.com/llvm/llvm-project"
+                            target="_blank" rel="noopener noreferrer">MLIR</a> into a flexible intermediate
+                        representation, avoiding MLIR's complexity.</li>
+                    <li>Evaluated through implementation of a custom Java compiler and IR interpreter, demonstrating
+                        extensibility and simplicity.</li>
+                </ul>
+                <div class="project-detail__tags">
+                    <span><a href="https://github.com/LaFoster00/Dungeon" target="_blank"
+                            rel="noopener noreferrer">GitHub</a></span>
+                    <span>Java</span>
+                    <span>IR</span>
+                    <span>Compiler Infrastructure</span>
+                    <span>Thesis</span>
+                </div>
             </div>
         </section>
 
@@ -34,25 +71,29 @@
                     <img src="projects/gpu_wfc/canvas.png" alt="GPU WFC large canvas result" loading="lazy" />
                     <img src="projects/gpu_wfc/RegularConstraints_128_128.png" alt="GPU WFC constraint heatmap"
                         loading="lazy" />
-                    <img src="images/BG.jpg" alt="GPU WFC debug overlay" loading="lazy" />
                 </t-slideshow>
             </div>
             <div class="project-detail__content">
-                <p class="project-detail__eyebrow">Lorem Ipsum · Dolor Sit</p>
-                <h2>GPU Accelerated Wave Function Collapse</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum, velit a suscipit tempus,
-                    ligula sem tempus eros, nec fermentum ipsum velit sed nulla.</p>
+                <p class="project-detail__eyebrow">Bachelor Thesis · Hochschule Darmstadt</p>
+                <h2><a href="https://github.com/LaFoster00/GPU_Accelerated_Wavefunction_Collapse" target="_blank"
+                        rel="noopener noreferrer">GPU Accelerated Wave Function Collapse</a></h2>
+                <p>My bachelor's thesis focused on implementing a GPU-accelerated version of the Wave Function Collapse
+                    algorithm for procedural content generation.</p>
                 <ul class="project-detail__list">
-                    <li>Curabitur vehicula sapien sed lorem faucibus, quis cursus nisl fermentum.</li>
-                    <li>Morbi ultrices, justo ut imperdiet luctus, ligula neque sagittis mi, sed pharetra urna justo
-                        sit amet nisl.</li>
-                    <li>Donec dictum, libero sed pulvinar facilisis, risus orci tristique quam, vitae dignissim nunc
-                        arcu at ipsum.</li>
+                    <li>Final Grade: 1.0 (german grading system)</li>
+                    <li>Implemented in using Unity game engine.</li>
+                    <li>Based on the original Wave Function Collapse algorithm, implemented as compute shaders and
+                        Burst-compiled multi-threaded jobs.</li>
                 </ul>
                 <div class="project-detail__tags">
-                    <span>C++20</span>
-                    <span>CUDA</span>
-                    <span>Rendering Tools</span>
+                    <span><a href="https://github.com/LaFoster00/GPU_Accelerated_Wavefunction_Collapse" target="_blank"
+                            rel="noopener noreferrer">GitHub</a></span>
+                    <span>GPU</span>
+                    <span>Unity</span>
+                    <span>Compute Shaders</span>
+                    <span>C#</span>
+                    <span>Graphics Programming</span>
+                    <span>Thesis</span>
                 </div>
             </div>
         </section>
@@ -64,21 +105,25 @@
                 </t-slideshow>
             </div>
             <div class="project-detail__content">
-                <p class="project-detail__eyebrow">Lorem Ipsum · Dolor Sit</p>
-                <h2>Slipper Engine</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum, velit a suscipit tempus,
-                    ligula sem tempus eros, nec fermentum ipsum velit sed nulla.</p>
+                <p class="project-detail__eyebrow">Educational · Independent</p>
+                <h2><a href="https://github.com/LaFoster00/Slipper" target="_blank" rel="noopener noreferrer">Toy Vulkan
+                        Rendering Engine</a></h2>
+                <p>Vulkan based forward renderer with support for model loading, transformations, and simple material
+                    settings.</p>
                 <ul class="project-detail__list">
-                    <li>Curabitur vehicula sapien sed lorem faucibus, quis cursus nisl fermentum.</li>
-                    <li>Morbi ultrices, justo ut imperdiet luctus, ligula neque sagittis mi, sed pharetra urna justo
-                        sit amet nisl.</li>
-                    <li>Donec dictum, libero sed pulvinar facilisis, risus orci tristique quam, vitae dignissim nunc
-                        arcu at ipsum.</li>
+                    <li>Based on modern C++ and Vulkan API.</li>
+                    <li>Educational project to learn Vulkan graphics programming.</li>
+                    <li>Implementing basic rendering techniques and pipeline stages.</li>
+                    <li>Sadly, the project was not completed.</li>
                 </ul>
                 <div class="project-detail__tags">
+                    <span><a href="https://github.com/LaFoster00/Slipper" target="_blank"
+                            rel="noopener noreferrer">GitHub</a></span>
                     <span>Vulkan</span>
                     <span>C++</span>
-                    <span>Tooling</span>
+                    <span>Graphics Programming</span>
+                    <span>Educational</span>
+                    <span>ImGUI</span>
                 </div>
             </div>
         </section>
@@ -97,19 +142,20 @@
                 </t-slideshow>
             </div>
             <div class="project-detail__content">
-                <p class="project-detail__eyebrow">Lorem Ipsum · Dolor Sit</p>
+                <p class="project-detail__eyebrow">Semester Project · Hochschule Darmstadt</p>
                 <h2>Market Thief</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum, velit a suscipit tempus,
-                    ligula sem tempus eros, nec fermentum ipsum velit sed nulla.</p>
+                <p>A 3D adventure game set in a bustling marketplace, with the goal of stealing items from various
+                    vendors and avoiding detection. Developed in a team of 5 people.
+                </p>
                 <ul class="project-detail__list">
-                    <li>Curabitur vehicula sapien sed lorem faucibus, quis cursus nisl fermentum.</li>
-                    <li>Morbi ultrices, justo ut imperdiet luctus, ligula neque sagittis mi, sed pharetra urna justo
-                        sit amet nisl.</li>
-                    <li>Donec dictum, libero sed pulvinar facilisis, risus orci tristique quam, vitae dignissim nunc
-                        arcu at ipsum.</li>
+                    <li>Developed crowd simulation and behavior using Unity Burst-compiled jobs.</li>
+                    <li>Implemented a basic AI system for NPC behavior and decision-making.</li>
+                    <li>Designed and implemented core gameplay mechanics, including player movement and item
+                        interactions.</li>
                 </ul>
                 <div class="project-detail__tags">
-                    <span>Unreal Engine</span>
+                    <span>Unity</span>
+                    <span>C#</span>
                     <span>AI Programming</span>
                     <span>Gameplay Systems</span>
                 </div>
@@ -127,21 +173,23 @@
                 </t-slideshow>
             </div>
             <div class="project-detail__content">
-                <p class="project-detail__eyebrow">Lorem Ipsum · Dolor Sit</p>
+                <p class="project-detail__eyebrow">Semester Project · Hochschule Darmstadt</p>
                 <h2>White Room</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dictum, velit a suscipit tempus,
-                    ligula sem tempus eros, nec fermentum ipsum velit sed nulla.</p>
+                <p>A virtual reality escape room experience, where players must solve puzzles and find clues to escape a
+                    minimalist white room. First ever game project and VR application I every worked on, developed in a
+                    team of 4 people.
+                </p>
                 <ul class="project-detail__list">
-                    <li>Curabitur vehicula sapien sed lorem faucibus, quis cursus nisl fermentum.</li>
-                    <li>Morbi ultrices, justo ut imperdiet luctus, ligula neque sagittis mi, sed pharetra urna justo
-                        sit amet nisl.</li>
-                    <li>Donec dictum, libero sed pulvinar facilisis, risus orci tristique quam, vitae dignissim nunc
-                        arcu at ipsum.</li>
+                    <li>Developed the core VR experience and implemented interactive puzzle elements.</li>
+                    <li>Collaborated with team members to design and implement the game's narrative and storyboarding.
+                    </li>
+                    <li>Developed tooling for level design and testing, gameplay systems and UI.</li>
                 </ul>
                 <div class="project-detail__tags">
                     <span>Unity</span>
                     <span>VR</span>
-                    <span>Narrative Design</span>
+                    <span>C#</span>
+                    <span>Game Design</span>
                 </div>
             </div>
         </section>
