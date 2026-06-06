@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 /* Reset */
 * {
@@ -16,15 +17,15 @@
   --p: 1rem/1.4em var(--ff);
   --p2: 0.875rem/1.4em var(--ff);
 
-  --bg-dark: hsl(336 0% 1%);
-  --bg: hsl(330 0% 4%);
-  --bg-light: hsl(0 0% 9%);
+  --bg-dark: hsl(336 0% 6%);
+  --bg: hsl(330 0% 9%);
+  --bg-light: hsl(0 0% 15%);
   --text: hsl(0 0% 95%);
   --text-muted: hsl(300 0% 69%);
-  --highlight: hsl(330 0% 39%);
-  --border: hsl(0 0% 28%);
-  --border-muted: hsl(300 0% 18%);
-  --primary: hsl(290 43% 73%);
+  --highlight: hsl(330 0% 80%);
+  --border: hsl(0 0% 40%);
+  --border-muted: hsl(300 0% 30%);
+  --primary: hsl(111 50% 80%);
   --secondary: hsl(111 33% 64%);
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
@@ -65,10 +66,10 @@ html.light {
   --bg-light: hsl(300 50% 100%);
   --text: hsl(330 0% 4%);
   --text-muted: hsl(0 0% 28%);
-  --highlight: hsl(300 50% 100%);
+  --highlight: hsl(300 0% 20%);
   --border: hsl(300 0% 50%);
   --border-muted: hsl(340 0% 62%);
-  --primary: hsl(290 34% 30%);
+  --primary: hsl(112 60% 34%);
   --secondary: hsl(112 49% 22%);
   --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
   --gradient-hover: linear-gradient(45deg, var(--bg), var(--bg-light));
@@ -96,6 +97,7 @@ body {
 
 h1 {
   font: var(--h1);
+  color: var(--primary);
 }
 
 h2 {
@@ -126,6 +128,22 @@ section {
   background: var(--bg);
   border-radius: var(--spacing2);
   box-shadow: var(--shadow-l);
+}
+
+section a[href] {
+  font-weight: bold;
+  font-style: italic;
+}
+
+section a[href]:not(.project-card a)::after {
+  display: inline-block;
+  text-transform: none;
+  vertical-align: -0.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "bootstrap-icons";
+  content: "\f44e";
+  margin-left: 4px;
 }
 
 .center {
